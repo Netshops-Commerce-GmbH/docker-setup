@@ -10,7 +10,7 @@ services:
             FULL_WIPE_ON_REBOOT: "true"
         volumes:
             - /var/www/html
-            - ./src:/var/www/src
+            - ../src:/var/www/src
 
 
     datasync:

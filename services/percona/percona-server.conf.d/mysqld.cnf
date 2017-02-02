@@ -25,10 +25,12 @@ explicit_defaults_for_timestamp
 # localhost which is more compatible and is not less secure.
 #bind-address = 127.0.0.1
 
-#log-error    = /var/log/mysql/error.log
+log-error    = /var/log/mysql/error.log
 
 # Recommended in standard MySQL setup
 sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_ALL_TABLES
 
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
+
+thread_stack=256K

@@ -48,6 +48,7 @@ services:
         volumes:
             - ./services/phpfpm/00-custom.ini:/etc/php/7.0/fpm/conf.d/00-custom.ini
             - ./services/phpfpm/90-custom.ini:/etc/php/7.0/fpm/conf.d/90-custom.ini
+            - ./services/phpfpm/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
         volumes_from:
             - datacontainer
 
@@ -62,8 +63,8 @@ services:
             TERM: xterm
         volumes:
             - /var/lib/mysql # To persist the database
-            - ./services/percona/percona-server.conf.d/mysql.cnf:/etc/mysql/percona-server.conf.d/mysql.cnf
-            - ./services/percona/percona-server.conf.d/mysql_safe.cnf:/etc/mysql/percona-server.conf.d/mysql_safe.cnf
+            - ./services/percona/percona-server.conf.d/mysqld.cnf:/etc/mysql/percona-server.conf.d/mysqld.cnf
+            - ./services/percona/percona-server.conf.d/mysqld_safe.cnf:/etc/mysql/percona-server.conf.d/mysqld_safe.cnf
 
 
     mailfetcher:

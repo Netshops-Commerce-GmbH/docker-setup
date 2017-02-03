@@ -39,7 +39,7 @@
     * Description: This container holds a fresh installation of Shopware and extracts it on every "up".
 * datasync
     * Image: netshops/dev_data_sync:latest
-    * Description: This container syncs ``/var/www/src`` into ``/var/www/html`` on "up" and constatly on file changes.
+    * Description: This container syncs ``/var/www/src`` into ``/var/www/html`` on "up" and after that constatly with ``inotify`` on file changes.
 * webserver
     * Image: nginx:stable
     * Description: Webserver to serve contents. Can be nginx or apache. Just configure it to your needs.

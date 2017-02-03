@@ -1,5 +1,9 @@
 # docker setup by netshops
 
+This docker setup was intended to be used with Shopware but as it is that generic you could run almost every PHP based web application that needs a webserver and database.
+
+Feel free to contribute.
+
 ## Installation instructions
 
 ### Getting started

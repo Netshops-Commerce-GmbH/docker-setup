@@ -1,0 +1,77 @@
+version: '2'
+
+services:
+    datacontainer:
+        image: netshops/dev_data_container_shopware:latest
+        tty: true
+        environment:
+            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.16_361b837b2dba5bbc5fb7064a718ebf57cfac5cad.zip"
+            EXTRACT_PATH: /var/www/html
+            FULL_WIPE_ON_REBOOT: "true"
+        volumes:
+            - /var/www/html
+            - ../src:/var/www/src
+
+
+    datasync:
+        image: netshops/dev_data_sync:latest
+        depends_on:
+            - datacontainer
+        volumes_from:
+            - datacontainer
+
+
+    webserver:
+        image: nginx:stable
+        ports:
+            - "80:80"
+        environment:
+           NGINX_HOST: dev.local
+           NGINX_PORT: 80
+           TERM: xterm
+        volumes:
+            - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
+            #- ./services/nginx/conf.d/vhost-default.conf:/etc/nginx/conf.d/default.conf
+            - ./services/nginx/conf.d/vhost-shopware.conf:/etc/nginx/conf.d/default.conf
+        volumes_from:
+            - datacontainer
+        links:
+            - db
+            - phpfpm
+            - mailfetcher
+
+
+    phpfpm:
+        image: netshops/dev_php_fpm_ioncube:latest
+        environment:
+           TERM: xterm
+        volumes:
+            - ./services/phpfpm/00-custom.ini:/etc/php/7.0/fpm/conf.d/00-custom.ini
+            - ./services/phpfpm/90-custom.ini:/etc/php/7.0/fpm/conf.d/90-custom.ini
+            - ./services/phpfpm/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
+        volumes_from:
+            - datacontainer
+
+
+    db:
+        image: percona:latest
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: dev
+            TERM: xterm
+        volumes:
+            - /var/lib/mysql # To persist the database
+            - ./services/percona/percona-server.conf.d/mysqld.cnf:/etc/mysql/percona-server.conf.d/mysqld.cnf
+            - ./services/percona/percona-server.conf.d/mysqld_safe.cnf:/etc/mysql/percona-server.conf.d/mysqld_safe.cnf
+
+
+    mailfetcher:
+        image: mailhog/mailhog:latest
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        environment:
+            MH_HOSTNAME: mail.dev.local
+            TERM: xterm

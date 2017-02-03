@@ -59,6 +59,7 @@ Feel free to contribute.
     * Description: A mail fetcher. Can be opened under [http://dev.local:8025/](http://dev.local/)
 
 ### Directory structure
+
 * projectname/
     * docker-setup/
         * services/ _(config files mounted as volumes)_
@@ -71,3 +72,7 @@ Feel free to contribute.
         * custom/plugins/.../
         * engine/Shopware/Plugins/.../
         * themes/Frontend/YourThemeName/
+        
+## Licence
+
+This project uses the [GNU General Public License v3.0](LICENCE.md).

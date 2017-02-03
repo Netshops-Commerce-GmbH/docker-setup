@@ -28,7 +28,7 @@
     - SMTP password: test
     - Connection auth:
 4. Open the [mailhog webinterface](http://may.local:8025/)
-5. Send a mail from shopware in the backend
+5. Send a mail from shopware in the backend (Settings -> Email Templates -> Choose a template -> Send test email to shop owner)
 
 ## Docker structure
 

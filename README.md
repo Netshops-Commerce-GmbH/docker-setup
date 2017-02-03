@@ -10,7 +10,7 @@ Feel free to contribute.
 
 1. Set a host entry in your local hosts file to ``127.0.0.1 dev.local``
 2. Navigate to your projects root
-3. Execute ``git clone git@gitlab.netshops-system.com:docker-images/docker-setup.git``
+3. Execute ``git clone git@github.com:Netshops-Commerce-GmbH/docker-setup.git``
 4. Navigate to the created folder with ``cd docker-setup/``
 5. Adjust the shopware release url in ``docker-compose.yml``
 6. Execute ``docker-compose pull`` to get the newest images

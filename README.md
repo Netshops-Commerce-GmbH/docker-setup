@@ -27,29 +27,29 @@
     - SMTP user: test
     - SMTP password: test
     - Connection auth:
-4. Open the [mailhog webinterface](http://may.local:8025/)
-5. Send a mail from shopware in the backend (Settings -> Email Templates -> Choose a template -> Send test email to shop owner)
+4. Open the [mailhog webinterface](http://dev.local:8025/)
+5. Send a mail from the [Shopware backend](http://dev.local/backend/) (Settings -> Email Templates -> Choose a template -> Send test email to shop owner)
 
 ## Docker structure
 
 ### Image layers
 
-* datacontainer
+* **datacontainer**
     * Image: netshops/dev_data_container_shopware:latest
     * Description: This container holds a fresh installation of Shopware and extracts it on every "up".
-* datasync
+* **datasync**
     * Image: netshops/dev_data_sync:latest
     * Description: This container syncs ``/var/www/src`` into ``/var/www/html`` on "up" and after that constatly with ``inotify`` on file changes.
-* webserver
+* **webserver**
     * Image: nginx:stable
     * Description: Webserver to serve contents. Can be nginx or apache. Just configure it to your needs.
-* phpfpm
+* **phpfpm**
     * Image: netshops/dev_php_fpm_ioncube
     * Description: PHP 7.0 with IonCube Loader and Xdebug
-* db
+* **db**
     * Image: percona:latest (MySQL Fork)
     * Description: A MySQL container. Choose whatever you like (e.g. MySQL, MariaDB, Percona)
-* mailfetcher
+* **mailfetcher**
     * Image: mailhog/mailhog:latest
     * Description: A mail fetcher. Can be opened under [http://dev.local:8025/](http://dev.local/)
 

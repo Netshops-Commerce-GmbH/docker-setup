@@ -10,7 +10,7 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 
 1. Set a host entry in your local hosts file to ``127.0.0.1 dev.local``
 2. Navigate to your projects root
-3. Execute ``git clone git@github.com:Netshops-Commerce-GmbH/docker-setup.git``
+3. Execute ``git clone https://github.com/Netshops-Commerce-GmbH/docker-setup.git``
 4. Navigate to the created folder with ``cd docker-setup/``
 5. Adjust the shopware release url in ``docker-compose.yml``
 6. Execute ``docker-compose pull`` to get the newest images
@@ -19,6 +19,13 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 9. If needed run your setup and change ``FULL_WIPE_ON_REBOOT`` in ``docker-compose.yml`` to ``"true"`` afterwards. Alternatively you can just import an SQL dump.
 10. Open [http://dev.local/](http://dev.local/) in your browser.
 
+
+### Database credentials
+      Host: db
+      User: root
+      Password: root
+      Database: dev
+    
 ### Configuring Mailhog
 
 1. Navigate to the Shopware backend

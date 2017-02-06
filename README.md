@@ -2,7 +2,7 @@
 
 This docker setup was intended to be used with Shopware but as it is that generic you could run almost every PHP based web application that needs a webserver and database.
 
-Feel free to contribute.
+Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/fk9MJ3iCZ4I2).
 
 ## Installation instructions
 

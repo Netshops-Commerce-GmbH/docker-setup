@@ -33,12 +33,12 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 3. Apply the following settings:
     - Method: smtp
     - Hostname for message id: mailhog.dev.local
-    - Mail hostname: mailhog
+    - Mail hostname: mailfetcher
     - Port: 1025
     - Prefix:
     - SMTP user: test
     - SMTP password: test
-    - Connection auth:
+    - Connection auth: login
 4. Open the [mailhog webinterface](http://dev.local:8025/)
 5. Send a mail from the [Shopware backend](http://dev.local/backend/) (Settings -> Email Templates -> Choose a template -> Send test email to shop owner)
 

@@ -15,9 +15,10 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 5. Adjust the shopware release url in ``docker-compose.yml``
 6. Execute ``docker-compose pull`` to get the newest images
 7. Change ``FULL_WIPE_ON_REBOOT`` in ``docker-compose.yml`` to ``"false"`` if you dont need the installation wizard.
-8. Execute ``docker-compose up``
-9. If needed run your setup and change ``FULL_WIPE_ON_REBOOT`` in ``docker-compose.yml`` to ``"true"`` afterwards. Alternatively you can just import an SQL dump.
-10. Open [http://dev.local/](http://dev.local/) in your browser.
+8. Change the environment variable ``COMPOSE_PROJECT_NAME=project`` in ``.env``
+9. Execute ``docker-compose up``
+10. If needed run your setup and change ``FULL_WIPE_ON_REBOOT`` in ``docker-compose.yml`` to ``"true"`` afterwards. Alternatively you can just import an SQL dump.
+11. Open [http://dev.local/](http://dev.local/) in your browser.
 
 
 ### Database credentials

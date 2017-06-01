@@ -18,4 +18,19 @@
         'display_errors'  => 1,
         'date.timezone'   => 'Europe/Berlin',
     ],
+    /* uncomment if needed */
+    /*'cdn' => [
+        'backend'  => 'local',
+        'adapters' => [
+            'local' => [
+                'type'     => 'local',
+                'mediaUrl' => 'http://my-stage-shop-url.de/',
+                'path'     => realpath(__DIR__.'/../../../'),
+            ],
+        ],
+    ],*/
+    'csrfProtection' => [
+        'frontend' => false,
+        'backend' => false
+    ],
 );

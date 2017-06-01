@@ -32,6 +32,7 @@ services:
         volumes:
             - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
             #- ./services/nginx/conf.d/vhost-default.conf:/etc/nginx/conf.d/default.conf
+            #- ./services/nginx/conf.d/vhost-oxid.conf:/etc/nginx/conf.d/default.conf
             - ./services/nginx/conf.d/vhost-shopware.conf:/etc/nginx/conf.d/default.conf
         volumes_from:
             - datacontainer

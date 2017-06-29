@@ -5,9 +5,9 @@ services:
         image: netshops/dev_data_container_shopware:latest
         tty: true
         environment:
-            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.16_361b837b2dba5bbc5fb7064a718ebf57cfac5cad.zip"
+            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.26_2437513ecb3e6d0340bab707cf4b680666d38ed5.zip"
             EXTRACT_PATH: /var/www/html
-            FULL_WIPE_ON_REBOOT: "true"
+            FULL_WIPE_ON_REBOOT: "false"
         volumes:
             - /var/www/html
             - ../src:/var/www/src

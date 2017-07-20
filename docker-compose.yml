@@ -5,7 +5,7 @@ services:
         image: netshops/dev_data_container_shopware:latest
         tty: true
         environment:
-            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.16_361b837b2dba5bbc5fb7064a718ebf57cfac5cad.zip"
+            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.24_2056ea7f0d0363e0d4c0678a4a68fc35db547965.zip"
             EXTRACT_PATH: /var/www/html
             FULL_WIPE_ON_REBOOT: "true"
         volumes:
@@ -26,7 +26,7 @@ services:
         ports:
             - "80:80"
         environment:
-           NGINX_HOST: dev.local
+           NGINX_HOST: sbscom.local
            NGINX_PORT: 80
            TERM: xterm
         volumes:
@@ -74,5 +74,5 @@ services:
             - "1025:1025"
             - "8025:8025"
         environment:
-            MH_HOSTNAME: mail.dev.local
+            MH_HOSTNAME: mail.sbscom.local
             TERM: xterm

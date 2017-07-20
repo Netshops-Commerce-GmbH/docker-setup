@@ -26,7 +26,7 @@ services:
         ports:
             - "80:80"
         environment:
-           NGINX_HOST: sbscom.local
+           NGINX_HOST: dev.local
            NGINX_PORT: 80
            TERM: xterm
         volumes:
@@ -74,5 +74,5 @@ services:
             - "1025:1025"
             - "8025:8025"
         environment:
-            MH_HOSTNAME: mail.sbscom.local
+            MH_HOSTNAME: mail.dev.local
             TERM: xterm

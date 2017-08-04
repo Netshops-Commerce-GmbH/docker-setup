@@ -4,6 +4,8 @@ This docker setup was intended to be used with Shopware but as it is that generi
 
 Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/fk9MJ3iCZ4I2).
 
+>Important information: This setup is for local programing purposes only!
+
 ## Installation instructions
 
 ### Getting started

@@ -20,12 +20,29 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 10. If needed run your setup and change ``FULL_WIPE_ON_REBOOT`` in ``docker-compose.yml`` to ``"true"`` afterwards. Alternatively you can just import an SQL dump.
 11. Open [http://dev.local/](http://dev.local/) in your browser.
 
+#### Additional setup instruction for OS X users
+
+Because of a bug in Docker for Mac you have to setup FTP deployment in your PhpStorm.
+1. Open your Project PhpStorm.
+2. Navigate to *Tools > Deployment > Configuration...*
+3. Add a new FTP server and name it "Docker FTP". Default credentials: 
+    ```
+    Host: localhost
+    User: deployment
+    Password: deployment
+    ```
+4. In the tab "Mapping", click on the most upper button to set the server as default server.
+5. Navigate to *Tools > Deployment > Options...*
+6. Change *Upload changed files automatically to the default server* to "Always".
 
 ### Database credentials
-      Host: db
-      User: root
-      Password: root
-      Database: dev
+
+```
+Host: db
+User: root
+Password: root
+Database: dev
+```
     
 ### Configuring Mailhog
 
@@ -65,7 +82,10 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 * **mailfetcher**
     * Image: mailhog/mailhog:latest
     * Description: A mail fetcher. Can be opened under [http://dev.local:8025/](http://dev.local/)
-
+* **ftp**
+    * Image: gswteam/docker-ftp
+    * Description: A FTP container.
+    
 ### Directory structure
 
 * projectname/

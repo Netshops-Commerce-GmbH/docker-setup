@@ -32,6 +32,7 @@ Because of a bug in Docker for Mac you have to setup SFTP deployment in your Php
     Host: dev.local
     User: root
     Password: password
+    Port: 2200
     ```
 4. In the tab "Mapping", click on the most upper button to set the server as default server.
 5. Navigate to *Tools > Deployment > Options...*

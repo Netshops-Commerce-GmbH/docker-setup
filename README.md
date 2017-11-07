@@ -24,14 +24,15 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 
 #### Additional setup instruction for OS X users
 
-Because of a bug in Docker for Mac you have to setup FTP deployment in your PhpStorm.
+Because of a bug in Docker for Mac you have to setup SFTP deployment in your PhpStorm.
 1. Open your Project PhpStorm.
 2. Navigate to *Tools > Deployment > Configuration...*
-3. Add a new FTP server and name it "Docker FTP". Default credentials: 
+3. Add a new SFTP server and name it "Docker SFTP". Default credentials: 
     ```
-    Host: localhost
-    User: deployment
-    Password: deployment
+    Host: dev.local
+    User: root
+    Password: password
+    Port: 2200
     ```
 4. In the tab "Mapping", click on the most upper button to set the server as default server.
 5. Navigate to *Tools > Deployment > Options...*
@@ -84,9 +85,9 @@ Database: dev
 * **mailfetcher**
     * Image: mailhog/mailhog:latest
     * Description: A mail fetcher. Can be opened under [http://dev.local:8025/](http://dev.local/)
-* **ftp**
-    * Image: gswteam/docker-ftp
-    * Description: A FTP container.
+* **sftp**
+    * Image: netshops/docker_dev_sftp
+    * Description: A sFTP container.
     
 ### Directory structure
 

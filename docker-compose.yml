@@ -82,7 +82,7 @@ services:
     sftp:
         image: netshops/dev_data_sftp
         ports:
-            - "22:22"
+            - "2200:22"
         depends_on:
             - datacontainer
         volumes_from:

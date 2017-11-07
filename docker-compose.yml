@@ -79,27 +79,11 @@ services:
             MH_HOSTNAME: mail.dev.local
             TERM: xterm
 
-<<<<<<< HEAD
-    ftp:
-        image: gswteam/docker-ftp
-        ports:
-            - "20:20"
-            - "21:21"
-        environment:
-            - FTP_USER=deployment
-            - FTP_PASSWORD=deployment
-        restart: always
-        depends_on:
-            - datacontainer
-        volumes:
-            - ./services/ftp/startup.sh:/startup.sh
-=======
     sftp:
         image: netshops/dev_data_sftp
         ports:
             - "22:22"
         depends_on:
             - datacontainer
->>>>>>> ff7e1f0
         volumes_from:
             - datacontainer

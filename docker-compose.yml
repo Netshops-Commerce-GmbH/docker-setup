@@ -5,9 +5,9 @@ services:
         image: netshops/dev_data_container_shopware:latest
         tty: true
         environment:
-            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.2.24_2056ea7f0d0363e0d4c0678a4a68fc35db547965.zip"
+            SHOPWARE_RELEASE_URL: "http://releases.s3.shopware.com.s3.amazonaws.com/install_5.3.4_05cdb056b32446d2bb555aa00f85aac06ec72060.zip"
             EXTRACT_PATH: /var/www/html
-            FULL_WIPE_ON_REBOOT: "true"
+            FULL_WIPE_ON_REBOOT: "false"
         volumes:
             - /var/www/html
             - ../src:/var/www/src
@@ -25,12 +25,14 @@ services:
         image: nginx:stable
         ports:
             - "80:80"
+            - "443:443"
         environment:
            NGINX_HOST: dev.local
            NGINX_PORT: 80
            TERM: xterm
         volumes:
             - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./services/nginx/cert:/etc/nginx/cert
             #- ./services/nginx/conf.d/vhost-default.conf:/etc/nginx/conf.d/default.conf
             #- ./services/nginx/conf.d/vhost-oxid.conf:/etc/nginx/conf.d/default.conf
             - ./services/nginx/conf.d/vhost-shopware.conf:/etc/nginx/conf.d/default.conf
@@ -77,6 +79,7 @@ services:
             MH_HOSTNAME: mail.dev.local
             TERM: xterm
 
+<<<<<<< HEAD
     ftp:
         image: gswteam/docker-ftp
         ports:
@@ -90,5 +93,13 @@ services:
             - datacontainer
         volumes:
             - ./services/ftp/startup.sh:/startup.sh
+=======
+    sftp:
+        image: netshops/dev_data_sftp
+        ports:
+            - "22:22"
+        depends_on:
+            - datacontainer
+>>>>>>> ff7e1f0
         volumes_from:
             - datacontainer

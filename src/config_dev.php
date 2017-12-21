@@ -33,4 +33,16 @@
         'frontend' => false,
         'backend' => false
     ],
+    'mail' => [
+        'type'     => 'smtp',
+        'host'     => 'mailfethcer',
+        'port'     => 1025,
+        'ssl'      => '',
+        'auth'     => 'login',
+        'username' => 'test',
+        'password' => 'test'
+    ],
+    'httpcache' => [
+        'debug' => true
+    ],
 );

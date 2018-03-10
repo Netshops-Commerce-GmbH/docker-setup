@@ -35,9 +35,8 @@
     ],
     'mail' => [
         'type'     => 'smtp',
-        'host'     => 'mailfethcer',
+        'host'     => 'mailfetcher',
         'port'     => 1025,
-        'ssl'      => '',
         'auth'     => 'login',
         'username' => 'test',
         'password' => 'test'

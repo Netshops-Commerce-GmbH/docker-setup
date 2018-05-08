@@ -63,6 +63,22 @@ Database: dev
 4. Open the [mailhog webinterface](http://dev.local:8025/)
 5. Send a mail from the [Shopware backend](http://dev.local/backend/) (Settings -> Email Templates -> Choose a template -> Send test email to shop owner)
 
+### Configuring XDebug
+
+1. Open PhpStorm
+2. Click on "Run" and the sub element "Edit Configurations..."
+3. Add a new configuration with the type "PHP Remote Debug"
+    1. Give it the name "docker"
+    2. Check the checkbox "Filter debug connection by IDE key"
+    3. Set the "IDE key (session id)" to "PHPSTORM"
+    4. Configure a server by clicking on the "..." behind the select box.
+        1. Apply the following settings:
+        ![docs/server_configuration.png](docs/server_configuration.png)
+    5. Click the OK button
+4. Click the OK button
+5. Now read the following tutorial and you should be ready to use XDebug: [Using the PhpStorm Debugger](https://confluence.jetbrains.com/display/PhpStorm/Using+the+PhpStorm+Debugger#UsingthePhpStormDebugger-Hello,Debugger)
+
+
 ## Docker structure
 
 ### Image layers

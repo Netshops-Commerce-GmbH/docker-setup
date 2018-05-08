@@ -90,11 +90,8 @@ Database: dev
     * Image: netshops/dev_data_sync:latest
     * Description: This container syncs ``/var/www/src`` into ``/var/www/html`` on "up" and after that constatly with ``inotify`` on file changes.
 * **webserver**
-    * Image: nginx:stable
-    * Description: Webserver to serve contents. Can be nginx or apache. Just configure it to your needs.
-* **phpfpm**
-    * Image: netshops/dev_php_fpm_ioncube
-    * Description: PHP 7.0 with IonCube Loader and Xdebug
+    * Image: netshops/dev_webserver
+    * Description: Webserver to serve contents. Just configure it to your needs.
 * **db**
     * Image: percona:latest (MySQL Fork)
     * Description: A MySQL container. Choose whatever you like (e.g. MySQL, MariaDB, Percona)
@@ -112,7 +109,7 @@ Database: dev
         * services/ _(config files mounted as volumes)_
             * nginx
             * percona
-            * phpfpm
+            * webserever
         * src/
             * config_dev.php _(copy to ../../src/)_
     * src/ _(changed files that are synced into a fresh shop-installation)_

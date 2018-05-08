@@ -22,36 +22,23 @@ services:
 
 
     webserver:
-        image: nginx:stable
+        image: netshops/dev_webserver
         ports:
             - "80:80"
             - "443:443"
         environment:
-           NGINX_HOST: dev.local
-           NGINX_PORT: 80
-           TERM: xterm
+            TERM: xterm
+            VIRTUAL_HOST: dev.local
+            SHOPWARE_ENV: dev
+            XDEBUG_CONFIG: remote_host=192.168.2.108
         volumes:
-            - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf
-            - ./services/nginx/cert:/etc/nginx/cert
-            - ./services/nginx/conf.d/vhost-shopware.conf:/etc/nginx/conf.d/default.conf
+            - ./services/webserver/sites-available:/etc/apache2/sites-available
+            - ./services/webserver/php.ini:/usr/local/etc/php/conf.d/custom-php.ini
         volumes_from:
             - datacontainer
         links:
             - db
-            - phpfpm
             - mailfetcher
-
-
-    phpfpm:
-        image: netshops/dev_php_fpm_ioncube:latest
-        environment:
-           TERM: xterm
-        volumes:
-            - ./services/phpfpm/00-custom.ini:/etc/php/7.0/fpm/conf.d/00-custom.ini
-            - ./services/phpfpm/90-custom.ini:/etc/php/7.0/fpm/conf.d/90-custom.ini
-            - ./services/phpfpm/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
-        volumes_from:
-            - datacontainer
 
 
     db:

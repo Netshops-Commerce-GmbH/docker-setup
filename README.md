@@ -109,7 +109,7 @@ Database: dev
         * services/ _(config files mounted as volumes)_
             * nginx
             * percona
-            * webserever
+            * webserver
         * src/
             * config_dev.php _(copy to ../../src/)_
     * src/ _(changed files that are synced into a fresh shop-installation)_

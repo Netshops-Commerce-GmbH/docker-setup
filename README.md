@@ -107,7 +107,6 @@ Database: dev
 * projectname/
     * docker-setup/
         * services/ _(config files mounted as volumes)_
-            * nginx
             * percona
             * webserver
         * src/

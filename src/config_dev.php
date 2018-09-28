@@ -1,22 +1,22 @@
-<?php return array(
-    'db'          => [
-        'host'     => 'db',
-        'port'     => '3306',
+<?php return [
+    'db' => [
+        'host' => 'db',
+        'port' => '3306',
         'username' => 'root',
         'password' => 'root',
-        'dbname'   => 'dev',
+        'dbname' => 'dev',
     ],
-    'front'       => [
+    'front' => [
         'throwExceptions' => true,
-        'showException'   => true,
+        'showException' => true,
     ],
-    'template'    => [
+    'template' => [
         'forceCompile' => true,
     ],
     'phpsettings' => [
         'error_reporting' => E_ALL & ~E_USER_DEPRECATED,
-        'display_errors'  => 1,
-        'date.timezone'   => 'Europe/Berlin',
+        'display_errors' => 1,
+        'date.timezone' => 'Europe/Berlin',
     ],
     /* uncomment if needed */
     /*'cdn' => [
@@ -29,19 +29,15 @@
             ],
         ],
     ],*/
-    'csrfProtection' => [
-        'frontend' => false,
-        'backend' => false
-    ],
     'mail' => [
-        'type'     => 'smtp',
-        'host'     => 'mailfetcher',
-        'port'     => 1025,
-        'auth'     => 'login',
+        'type' => 'smtp',
+        'host' => 'mailfetcher',
+        'port' => 1025,
+        'auth' => 'login',
         'username' => 'test',
-        'password' => 'test'
+        'password' => 'test',
     ],
     'httpcache' => [
-        'debug' => true
+        'debug' => true,
     ],
-);
+];

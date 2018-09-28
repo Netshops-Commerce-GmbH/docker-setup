@@ -1,10 +1,10 @@
-# docker setup by netshops
+# Docker setup by Etribes
 
 This docker setup was intended to be used with Shopware but as it is that generic you could run almost every PHP based web application that needs a webserver and database.
 
-Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/fk9MJ3iCZ4I2).
+Feel free to contribute.
 
->Important information: This setup is for local programing purposes only!
+>Important information: This setup is for local programing purposes only! It should not be used in a production environment.
 
 ## Installation instructions
 
@@ -12,7 +12,7 @@ Feel free to contribute. Join the [discussion on Skype](https://join.skype.com/f
 
 1. Set a host entry in your local hosts file to ``127.0.0.1 dev.local``
 2. Navigate to your projects root
-3. Execute ``git clone https://github.com/Netshops-Commerce-GmbH/docker-setup.git``
+3. Execute ``git clone https://github.com/eTribes-Connect-GmbH/docker-setup.git``
 4. Navigate to the created folder with ``cd docker-setup/``
 5. Adjust the shopware release url in ``docker-compose.yml``
 6. Execute ``docker-compose pull`` to get the newest images
@@ -107,9 +107,8 @@ Database: dev
 * projectname/
     * docker-setup/
         * services/ _(config files mounted as volumes)_
-            * nginx
             * percona
-            * webserever
+            * webserver
         * src/
             * config_dev.php _(copy to ../../src/)_
     * src/ _(changed files that are synced into a fresh shop-installation)_

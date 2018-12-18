@@ -22,7 +22,7 @@ services:
 
 
     webserver:
-        image: netshops/dev_webserver
+        image: netshops/dev_webserver:7.2
         ports:
             - "80:80"
             - "443:443"

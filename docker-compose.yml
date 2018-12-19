@@ -32,7 +32,7 @@ services:
             SHOPWARE_ENV: dev
             XDEBUG_CONFIG: remote_host=192.168.2.108
         volumes:
-            - ./services/webserver/php.ini:/usr/local/etc/php/conf.d/custom-php.ini
+            - ./services/apache/php.ini:/usr/local/etc/php/conf.d/custom-php.ini
         volumes_from:
             - datacontainer
         links:

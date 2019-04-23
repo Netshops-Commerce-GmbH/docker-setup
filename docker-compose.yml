@@ -50,8 +50,8 @@ services:
             TERM: xterm
         volumes:
             - /var/lib/mysql # To persist the database
-            - ./services/percona/percona-server.conf.d/mysqld.cnf:/etc/my.cnf.d/mysqld.cnf
-            - ./services/percona/percona-server.conf.d/mysqld_safe.cnf:/etc/my.cnf.d/mysqld_safe.cnf
+            - ./services/percona/percona-server.conf.d/mysqld.cnf:/etc/mysql/percona-server.conf.d/mysqld.cnf
+            - ./services/percona/percona-server.conf.d/mysqld_safe.cnf:/etc/mysql/percona-server.conf.d/mysqld_safe.cnf
 
 
     mailfetcher:

@@ -7,7 +7,7 @@ services:
         environment:
             SHOPWARE_RELEASE_URL: "http://releases.shopware.com/install_5.5.7_f785facc70e39f2ca4292e78739457417f19fbcf.zip"
             EXTRACT_PATH: /var/www/html
-            FULL_WIPE_ON_REBOOT: "false"
+            FULL_WIPE_ON_REBOOT: "true"
         volumes:
             - /var/www/html
             - ../src:/var/www/src
